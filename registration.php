@@ -98,7 +98,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Pekerjaan</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" name="pekerjaan" placeholder="Pekerjaan"
+                                <input type="text" class="form-control" name="job" placeholder="Pekerjaan"
                                     required>
                             </div>
                         </div>

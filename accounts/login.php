@@ -12,7 +12,6 @@
                         $_SESSION['password'] = $get_password;
                         $_SESSION['role'] = $rows['role'];
                         header('Location:../admin/index.php');
-                        
                     } else {
                         header('Location:../index.php?login_error=wrong');
                     }

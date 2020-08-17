@@ -4,11 +4,20 @@
         $sel_sql = "SELECT * FROM users WHERE email = '$_SESSION[email]' AND password = '$_SESSION[password]'";
         if($run_sql = mysqli_query($conn, $sel_sql)) {
             while($rows = mysqli_fetch_assoc($run_sql)) {
+                $name = $rows['name'];
+                $email = $rows['email'];
+                $gender = $rows['gender'];
+                $religion = $rows['religion'];
+                $job = $rows['job'];
+                $handphone = $rows['handphone'];
+                $off_website = $rows['off_website'];
+                $address = $rows['address'];
+
                 if(mysqli_num_rows($run_sql)) {
                     if ($rows['role'] == 'admin') {
                     } else {
                         header('Location:../index.php');
-                    }
+                    } 
                 } else {
                     header('Location:../index.php');
                 }
@@ -59,15 +68,15 @@
                                     </div> -->
                                 </div>
                             </div>
-                            <div class="col-lg-3 list-profile">
-                                <h2>Ian Lombu</h2>
-                                <p><i class="fas fa-atom"></i>Programmer</p>
-                                <p><i class="fas fa-map-marker"></i>Bogor</p>
-                                <p><i class="fas fa-phone-alt"></i>08121212</p>
-                                <p><i class="fas fa-envelope"></i>ianlombu@gmail.com</p>
-                                <p><i class="fas fa-venus-mars"></i>Laki-Laki</p>
-                                <p><i class="fas fa-praying-hands"></i>Kristen Protestan</p>
-                                <p><i class="fas fa-blog"></i>www.ianlombu.com</p>
+                            <div class="col-lg-6 list-profile">
+                                <h2><?php echo $name ?></h2>
+                                <p><i class="fas fa-atom"></i><?php echo $job ?></p>
+                                <p><i class="fas fa-map-marker"></i><?php echo $address ?></p>
+                                <p><i class="fas fa-phone-alt"></i><?php echo $handphone ?></p>
+                                <p><i class="fas fa-envelope"></i><?php echo $email ?></p>
+                                <p><i class="fas fa-venus-mars"></i><?php echo $gender ?></p>
+                                <p><i class="fas fa-praying-hands"></i><?php echo $religion ?></p>
+                                <p><i class="fas fa-blog"></i><?php echo $off_website ?></p>
                             </div>
                         </div>
 
